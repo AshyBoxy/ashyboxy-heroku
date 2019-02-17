@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="border: 5px solid blue;">
+
+<head>
+  <title>Random Pokemon Stuff: Cute Pictures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="font-family: calibri;">
+  <header style="background: pink; border: 5px solid red; padding: 0px;">
+    <main style="text-align: center;">
+      <h1>Random Pokémon Stuff</h1>
+      <h2 style="font-family: inherit">Cute Pokémon Pictures</h2>
+    </main>
+    <div>
+      <nav style="text-align: center; font-size: 15pt; border: solid 5px green; background-color: lightgreen; height: 34; border-radius: 1000px;">
+        Navigation:
+        <a href="#" title="1">1</a>
+        /
+        <a href="/randomPokemon/" title="Random Pokémon Stuff: Fact Sheets">Fact Sheets</a>
+        /
+        <a href="#" title="3">3</a>
+        /
+        <a href="#" title="4">4</a>
+      </nav>
+      <br>
+  </header>
+  <div id="div">
+    <script>
+      var num = Math.floor(Math.random() * 5) + 1;
+      var div = document.getElementById("div");
+      var pic = document.createElement("img");
+      pic.style = "-webkit-user-select: none;";
+      pic.src = "/public/picture_files/" + num + ".png";
+      div.appendChild(pic);
+    </script>
+  </div>
+  <div>
+    <footer style="text-align: center; font-family: inherit; border: 5px black solid; padding: 5px; background-color: grey;">
+      Pokémon © 1995-2018 Nintendo/Game Freak.
+    </footer>
+  </div>
+</body>
+
+</html>
