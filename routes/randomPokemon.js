@@ -2,7 +2,11 @@ const express = require("express"),
     router = express.Router();
 
 router.get("/", (req, res) => {
-    res.send("<h1>...</h1>");
+    res.sendFile(dir + "randomPokemon/Facts.html");
+});
+
+router.get("/picture", (req, res) => {
+    res.sendFile(dir + "randomPokemon/CutePicture.html");
 });
 
 router.all("*", (req, res) => {

@@ -13,6 +13,7 @@ app.set('view engine', 'pug');
 
 app.use(favicon(dir + "assets/favicon.png"));
 app.use("/assets", express.static(dir + "assets/"));
+app.use("/public", express.static(dir + "public/"));
 
 app.use("/randomPokemon", require("./routes/randomPokemon"));
 
