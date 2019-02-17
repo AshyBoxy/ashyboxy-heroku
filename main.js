@@ -6,7 +6,8 @@ const favicon = require("express-favicon");
 const PORT = process.env.PORT || 8080;
 global.dir = __dirname + "/";
 
-if (process.env.ENVIRONMENT == "LOCAL") app.use(require("morgan")("dev"));
+if (process.env.ENVIRONMENT == "LOCAL") app.use(require("morgan")("dev")) && console.log("Running locally!");
+else console.log("Running on Heroku");
 
 app.use(favicon(dir + "assets/favicon.png"));
 app.use("/assets", express.static(dir + "assets/"));
