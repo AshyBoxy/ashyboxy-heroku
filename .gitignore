@@ -1,0 +1,6 @@
+# Local Environment
+node_modules
+*.env
+
+# Testing
+*.test.*
