@@ -9,8 +9,12 @@ global.dir = __dirname + "/";
 if (process.env.ENVIRONMENT == "LOCAL") app.use(require("morgan")("dev")) && console.log("Running locally!");
 else console.log("Running on Heroku");
 
+app.set('view engine', 'pug');
+
 app.use(favicon(dir + "assets/favicon.png"));
 app.use("/assets", express.static(dir + "assets/"));
+
+app.use("/randomPokemon", require("./routes/randomPokemon"));
 
 app.get("/", (req, res) => {
     res.send("<title>Under Construction</title><h1>Site Under Construction</h1>");
@@ -18,7 +22,9 @@ app.get("/", (req, res) => {
 
 app.all("*", (req, res) => {
     res.status(404);
-    res.send("<title>404 - Page not found</title><h1>404</h1><p>Page does not exist</p>")
+    res.render("error", {
+        "url": req.protocol + '://' + req.get('host') + req.url
+    });
 });
 
 const server = app.listen(PORT, () => {
