@@ -1,7 +1,7 @@
 {
   "name": "ashyboxy-heroku-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "AshyBoxy's site on heroku",
   "main": "main.js",
   "scripts": {
     "test": "echo 'Starting Test\n---'; node test.js;",
