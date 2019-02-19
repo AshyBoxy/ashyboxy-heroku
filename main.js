@@ -18,7 +18,7 @@ app.use("/public", express.static(dir + "public/"));
 app.use("/randomPokemon", require("./routes/randomPokemon"));
 
 app.get("/", (req, res) => {
-    res.send("<title>Under Construction</title><h1>Site Under Construction</h1>");
+    res.render("main");
 });
 
 app.all("*", (req, res) => {
